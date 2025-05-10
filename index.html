@@ -12,20 +12,39 @@
       color: #c9d1d9;
     }
 
-<nav>
-                    <div class="togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="navlinks">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Resume</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #161b22;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #58a6ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #c9d1d9;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #58a6ff;
+    }
+
   .container {
   max-width: 1200px;
   margin: 2rem auto;
@@ -45,7 +64,6 @@
     .text-section h2 {
       font-size: 2.5rem;
       color: #f472b6;
-      text-align: center;
     }
 
     .text-section p {
@@ -59,9 +77,8 @@
     }
 
     .profile-photo {
-      margin-top: 45px;
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
       border-radius: 12px;
     }
 
@@ -73,25 +90,19 @@
       gap: 10px;
     }
 
-.social-handles a {
-  display: inline-flex;
-  align-items: center;
-  color: #eaeaea;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 1;
-}
+    .social-handles a {
+      display: flex;
+      align-items: center;
+      color: #eaeaea;
+      text-decoration: none;
+      font-size: 16px;
+    }
 
-.social-handles img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  margin-right: 8px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-
+    .social-handles img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
 
     @media (max-width: 768px) {
       .container {
@@ -129,44 +140,16 @@ body {
   color: var(--text-color);
 }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #161b22;
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
+nav {
+  background-color: var(--nav-color);
+}
 
-    nav h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #58a6ff;
-    }
+nav ul li a {
+  color: var(--link-color);
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: #c9d1d9;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #58a6ff;
-    }
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top:4rem;
+nav ul li a:hover {
+  color: var(--hover-color);
 }
 
 .text-section h2 {
@@ -212,7 +195,11 @@ body {
     <div class="photo-section">
       <img src="Photos/oshan.jpg" alt="Oshan's photo" class="profile-photo" />
       <div class="social-handles">
-        <a href="https://github.com/OshanFPS" target="_blank">
+        <a href="https://instagram.com/oshan.paudel" target="_blank">
+          <img src="Photos/instagram.png" alt="Instagram" />
+          @oshan.paudel
+        </a>
+        <a href="https://github.com/yourgithub" target="_blank">
           <img src="Photos/github.png" alt="GitHub" />
           @OshanFPS
         </a>
