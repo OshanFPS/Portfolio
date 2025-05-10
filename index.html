@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oshan's Portfolio</title>
-  <link rel="icon" href="Photos/notzerr.jpg" type="image/x-icon">
   <style>
-    body {
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -170,12 +168,7 @@ nav ul li a:hover {
   color: var(--text-color);
   margin-left: 1rem;
 }
-  .copyright {
-    text-align: center; /* Center the text */
-    margin-top: 30vh; /* Optional: Add some space above the copyright */
-    font-size: 14px; /* Optional: Adjust the font size */
-    color: #fff; /* Change text color as needed */
-}
+
   </style>
 </head>
 <body>
@@ -202,6 +195,10 @@ nav ul li a:hover {
     <div class="photo-section">
       <img src="Photos/oshan.jpg" alt="Oshan's photo" class="profile-photo" />
       <div class="social-handles">
+        <a href="https://instagram.com/oshan.paudel" target="_blank">
+          <img src="Photos/instagram.png" alt="Instagram" />
+          @oshan.paudel
+        </a>
         <a href="https://github.com/yourgithub" target="_blank">
           <img src="Photos/github.png" alt="GitHub" />
           @OshanFPS
@@ -209,8 +206,14 @@ nav ul li a:hover {
       </div>
     </div>
   </div>
-<div class="copyright">
-    <p>Made by Oshan Paudel © 2025</p>
+  <div class="theme-toggle">
+  <button id="light-mode-btn" title="Light Mode">
+    🌞
+  </button>
+  <button id="dark-mode-btn" title="Dark Mode" style="display: none;">
+    🌙
+  </button>
 </div>
+
 </body>
 </html>
