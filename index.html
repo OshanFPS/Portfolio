@@ -35,10 +35,6 @@
       padding: 0;
     }
 
-    nav ul li {
-      display: inline;
-    }
-
     nav ul li a {
       color: #c9d1d9;
       text-decoration: none;
@@ -50,97 +46,74 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
     }
 
-    h2 {
+    .text-section {
+      flex: 1 1 60%;
+    }
+
+    .text-section h2 {
       font-size: 2.5rem;
       color: #f472b6;
     }
 
-    p {
+    .text-section p {
       line-height: 1.6;
       color: #8b949e;
     }
- .intro {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 2rem 0;
-}
 
-.text {
-  flex: 1;
-  text-align: left;
-  margin-left: -20px; /* shifts text slightly to the left */
-}
+    .photo-section {
+      flex: 1 1 35%;
+      text-align: center;
+    }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
-}
+    .profile-photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+    }
 
-.text-section {
-  flex: 1 1 60%;
-  color: #eaeaea;
-  padding-right: 20px;
-}
+    .social-handles {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
 
-.photo-section {
-  flex: 1 1 35%;
-  text-align: center;
-}
+    .social-handles a {
+      display: flex;
+      align-items: center;
+      color: #eaeaea;
+      text-decoration: none;
+      font-size: 16px;
+    }
 
-.profile-photo {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-}
+    .social-handles img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
 
-.social-handles {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
 
-.social-handles a {
-  display: flex;
-  align-items: center;
-  color: #eaeaea;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.social-handles img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .text-section, .photo-section {
-    width: 100%;
-    padding: 0;
-    text-align: center;
-  }
-}
-
+      .text-section, .photo-section {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -154,8 +127,7 @@
   </nav>
 
   <div class="container">
-  <div class="intro">
-    <div class="text">
+    <div class="text-section">
       <h2>Hi, I'm Oshan</h2>
       <p>
         With over 4 years of hands-on experience in Minecraft server development, I’ve honed my skills in optimizing performance, configuring complex systems, and designing immersive gameplay experiences through the creation of innovative plugins and custom features. My journey began with a curiosity for how virtual worlds operate, which soon evolved into a full-blown passion for building engaging and scalable game environments that captivate players and foster vibrant communities.
@@ -163,24 +135,20 @@
         In parallel, I’ve developed a strong foundation as a web developer, dedicated to crafting modern, responsive, and accessible web applications. I thrive on transforming ideas into functional, polished digital experiences—combining creativity with technical precision to deliver results that are both user-friendly and performance-driven.
       </p>
     </div>
-    <div class="photo">
-      <img src="Photos/oshan.jpg" alt="Oshan's photo">
+
+    <div class="photo-section">
+      <img src="Photos/oshan.jpg" alt="Oshan's photo" class="profile-photo" />
+      <div class="social-handles">
+        <a href="https://instagram.com/oshan.paudel" target="_blank">
+          <img src="instagram-icon.png" alt="Instagram" />
+          @oshan.paudel
+        </a>
+        <a href="https://github.com/yourgithub" target="_blank">
+          <img src="github-icon.png" alt="GitHub" />
+          @yourgithub
+        </a>
+      </div>
     </div>
   </div>
-</div>
-    <div class="photo-section">
-    <img src="your-photo.jpg" alt="Profile Photo" class="profile-photo" />
-    
-    <div class="social-handles">
-      <a href="https://instagram.com/yourhandle" target="_blank">
-        <img src="instagram-icon.png" alt="Instagram" />
-        @oshan.paudel
-      </a>
-      <a href="https://github.com/yourgithub" target="_blank">
-        <img src="github-icon.png" alt="GitHub" />
-        @yourgithub
-      </a>
-    </div>
-
 </body>
 </html>
