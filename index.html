@@ -64,11 +64,35 @@
       line-height: 1.6;
       color: #8b949e;
     }
+    .intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.text {
+  flex: 1 1 60%;
+}
+
+.photo {
+  flex: 1 1 35%;
+  text-align: center;
+}
+
+.photo img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 2px solid #30363d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
   </style>
 </head>
 <body>
   <nav>
-    <h1>Oshan</h1>
+    <h1>NoTzeR</h1>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
@@ -80,5 +104,8 @@
     <h2>Hi, I'm Oshan</h2>
     <p>With over 4 years of hands-on experience in Minecraft server development, I’ve honed my skills in optimizing performance, configuring complex systems, and designing immersive gameplay experiences through the creation of innovative plugins and custom features. My journey began with a curiosity for how virtual worlds operate, which soon evolved into a full-blown passion for building engaging and scalable game environments that captivate players and foster vibrant communities. In parallel, I’ve developed a strong foundation as a web developer, dedicated to crafting modern, responsive, and accessible web applications. I thrive on transforming ideas into functional, polished digital experiences—combining creativity with technical precision to deliver results that are both user-friendly and performance-driven.</p>
   </div>
+      <div class="photo">
+      <img src="your-photo.jpg" alt="Oshan's photo">
+    </div>
 </body>
 </html>
