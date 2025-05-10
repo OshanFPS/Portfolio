@@ -90,19 +90,22 @@
       gap: 10px;
     }
 
-    .social-handles a {
-      display: flex;
-      align-items: center;
-      color: #eaeaea;
-      text-decoration: none;
-      font-size: 16px;
-    }
+.social-handles a {
+  display: inline-flex;
+  align-items: center;
+  color: #eaeaea;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1; /* Helps align things more tightly */
+}
 
 .social-handles img {
   width: 30px;
   height: 30px;
-  object-fit: contain; /* prevents stretching */
   margin-right: 8px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle; /* helps ensure vertical alignment */
 }
 
 
