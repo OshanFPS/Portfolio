@@ -83,6 +83,23 @@ function autoSlide() {
 }
 
 setInterval(autoSlide, slideInterval);
+<script>
+  const lightBtn = document.getElementById('light-mode-btn');
+  const darkBtn = document.getElementById('dark-mode-btn');
+
+  lightBtn.addEventListener('click', () => {
+    document.body.classList.add('light-mode');
+    lightBtn.style.display = 'none';
+    darkBtn.style.display = 'inline';
+  });
+
+  darkBtn.addEventListener('click', () => {
+    document.body.classList.remove('light-mode');
+    darkBtn.style.display = 'none';
+    lightBtn.style.display = 'inline';
+  });
+</script>
+
 
 
 // This code was created by WerDeveloper.
