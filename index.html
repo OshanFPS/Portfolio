@@ -2,56 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oshan's Portfolio</title>
-  <link rel="icon" href="Photos/notzerr.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maintenance Popup</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .popup {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      animation: popUp 0.4s ease-out;
+      max-width: 400px;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+      animation: bounce 1s ease infinite;
+    }
+
+    .popup p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0.7); opacity: 0 }
+      to { transform: scale(1); opacity: 1 }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <h1>NoTzeR</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-
-  <div class="container">
-    <div class="text-section">
-      <h2>Hi, I'm Oshan</h2>
-      <p>
-        With over 4 years of hands-on experience in Minecraft server development, I’ve honed my skills in optimizing performance, configuring complex systems, and designing immersive gameplay experiences through the creation of innovative plugins and custom features... </p><br>
-     
-<p> In parallel, I’ve developed a strong foundation as a web developer, dedicated to crafting modern, responsive, and accessible web applications. I thrive on transforming ideas into functional, polished digital experiences—combining creativity with technical precision to deliver results that are both user-friendly and performance-driven.
-      </p>
-    </div>
-
-    <div class="photo-section">
-      <img src="Photos/oshan.jpg" alt="Oshan's photo" class="profile-photo" />
-      <div class="social-handles">
-        <a href="https://github.com/yourgithub" target="_blank">
-          <img src="Photos/github.png" alt="GitHub" />
-          @OshanFPS
-        </a>
-      </div>
-    </div>
+<div class="popup-overlay" id="maintenancePopup">
+  <div class="popup">
+    <h2>🚧 Under Maintenance</h2>
+    <p>We're currently performing scheduled maintenance.<br>Please check back soon!</p>
+    <button onclick="closePopup()">OK</button>
   </div>
+</div>
 
+<script>
+  function closePopup() {
+    document.getElementById('maintenancePopup').style.display = 'none';
+  }
+</script>
 
-<div class="maintenance-notice">
-    <h1>🚧 Under Maintenance</h1>
-    <p>We're performing scheduled updates. Please check back soon!</p>
-
-
-
-
-  
-  <div class="copyright">
-  <h3>Made by Oshan Paudel © 2025</h3>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
