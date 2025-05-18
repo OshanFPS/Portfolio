@@ -1,104 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maintenance Popup</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-    }
-
-    .popup-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .popup {
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      animation: popUp 0.4s ease-out;
-      max-width: 400px;
-    }
-
-    .popup h2 {
-      margin-top: 0;
-      font-size: 24px;
-      color: #333;
-      animation: bounce 1s ease infinite;
-    }
-
-    .popup p {
-      font-size: 16px;
-      color: #666;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0 }
-      to { opacity: 1 }
-    }
-
-    @keyframes popUp {
-      from { transform: scale(0.7); opacity: 0 }
-      to { transform: scale(1); opacity: 1 }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    .popup button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #007BFF;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .popup button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oshan's Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <h1>NoTzeR</h1>
+    <button id="themeToggle">🌓</button>
+  </header>
 
-<div class="popup-overlay" id="maintenancePopup">
-  <div class="popup">
-    <h2>🚧 Under Maintenance</h2>
-    <p>We're currently performing scheduled maintenance.<br>Please check back soon!</p>
-    <button onclick="closePopup()">OK</button>
-  </div>
-</div>
+  <main class="container">
+    <div class="text">
+      <h2>Hey, I'm Oshan</h2>
+      <p>
+        With over 4 years of hands-on experience in <strong>Minecraft server development</strong>, I’ve honed my skills in optimizing performance, configuring complex systems, and designing immersive gameplay experiences.
+      </p>
+      <p>
+        I’m also a <strong>web developer</strong> focused on building responsive, fast, and user-friendly web apps using modern technologies.
+      </p>
 
-<script>
-  const popup = document.getElementById('maintenancePopup');
+      <div class="skills">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Modern websites using React, Tailwind, Node.js and more.</p>
+        </div>
+        <div class="card">
+          <h3>Minecraft Servers</h3>
+          <p>Over 4 years working with Spigot, Paper, plugins, and custom configs.</p>
+        </div>
+      </div>
 
-  function showPopup() {
-    popup.style.display = 'flex';
-  }
+      <div class="buttons">
+        <a href="#" class="btn primary">Contact Me</a>
+        <a href="#" class="btn secondary">View Projects</a>
+      </div>
 
-  function closePopup() {
-    popup.style.display = 'none';
+      <div class="socials">
+        <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
 
-    // Re-show popup after 5 seconds
-    setTimeout(showPopup, 5000);
-  }
-</script>
+    <div class="photo">
+      <img src="Photos/oshan.jpg" alt="Oshan's Photo">
+    </div>
+  </main>
 
+  <footer>
+    Made by Oshan Paudel © 2025
+  </footer>
+
+  <script>
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
