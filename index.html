@@ -1,87 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oshan.dev</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    }
-  </script>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="bg-gray-900 text-white transition-all duration-300 ease-in-out">
-
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center p-4 px-6 bg-gray-800">
-    <h1 class="text-xl font-bold">Oshan.dev</h1>
-    <div class="flex items-center space-x-4">
-      <a href="#about" class="text-sm hover:text-blue-400">About</a>
-      <a href="#projects" class="text-sm hover:text-blue-400">Projects</a>
-      <a href="#contact" class="text-sm hover:text-blue-400">Contact</a>
-      <button onclick="toggleTheme()" class="bg-blue-600 text-white px-2 py-1 text-sm rounded hover:bg-blue-700">
-        Toggle Theme
-      </button>
-    </div>
+<body class="dark">
+  <nav class="navbar">
+    <h1>Oshan.dev</h1>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle">☀️</button></li>
+    </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="flex flex-col-reverse md:flex-row items-center max-w-6xl mx-auto px-6 py-12 space-y-10 md:space-y-0 md:space-x-10">
-    <!-- Text content -->
-    <div class="md:w-1/2">
-      <h2 class="text-4xl font-bold mb-4">Hey, I'm Oshan</h2>
-      <p class="mb-4 text-gray-300">
-        With over 4 years of hands-on experience in <strong>Minecraft server development</strong>, I specialize in performance optimization, plugin configuration, and immersive gameplay systems.
-      </p>
-      <p class="mb-6 text-gray-300">
-        I'm also a skilled <strong>web developer</strong> with a passion for responsive, modern, and accessible web interfaces using React, Tailwind, and more.
-      </p>
-      <div class="flex space-x-4">
-        <a href="#contact" class="bg-white text-blue-800 font-semibold px-4 py-2 rounded hover:bg-blue-100">Contact Me</a>
-        <a href="#projects" class="border border-white px-4 py-2 rounded hover:bg-gray-700">View Projects</a>
+  <main class="container">
+    <section id="about" class="about">
+      <div class="text">
+        <h2>Hey, I'm Oshan</h2>
+        <p>With over 4 years of hands-on experience in <strong>Minecraft server development</strong>, I specialize in performance optimization, custom plugins, and immersive gameplay.</p>
+        <p>I’m also a <strong>web developer</strong> passionate about building fast, modern, and responsive websites with precision and creativity.</p>
+        <div class="buttons">
+          <a href="#contact" class="btn primary">Contact Me</a>
+          <a href="#projects" class="btn">View Projects</a>
+        </div>
+        <div class="social">
+          <a href="https://github.com/yourgithub" target="_blank">
+            <img src="Photos/github.png" alt="GitHub" /> GitHub
+          </a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank">
+            <img src="Photos/linkedin.png" alt="LinkedIn" /> LinkedIn
+          </a>
+        </div>
       </div>
-    </div>
+      <div class="photo">
+        <img src="Photos/oshan.jpg" alt="Oshan photo" />
+      </div>
+    </section>
 
-    <!-- Photo + Logos -->
-    <div class="md:w-1/2 text-center">
-      <img src="Photos/oshan.jpg" alt="Oshan Photo" class="w-72 h-72 mx-auto rounded-xl shadow-lg" />
-      <div class="flex justify-center space-x-6 mt-6">
-        <a href="https://github.com/yourgithub" target="_blank">
-          <img src="github-logo.png" alt="GitHub" class="w-8 h-8 hover:scale-110 transition" />
-        </a>
-        <a href="https://linkedin.com/in/yourlinkedin" target="_blank">
-          <img src="linkedin-logo.png" alt="LinkedIn" class="w-8 h-8 hover:scale-110 transition" />
-        </a>
+    <section id="projects" class="projects">
+      <h2>What I Do</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Crafting performant, scalable, and user-friendly websites with modern technologies like React, Tailwind CSS, and Node.js.</p>
+        </div>
+        <div class="card">
+          <h3>Minecraft Server Dev</h3>
+          <p>Building custom Minecraft experiences with Spigot, Paper, plugin configs, server optimization, and community engagement.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- What I Do Section -->
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-2xl font-semibold mb-6">What I Do</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-        <p>
-          I build scalable web apps with modern tech like React, Tailwind, Node.js, and Next.js.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-semibold mb-2">Minecraft Servers</h3>
-        <p>
-          Deep experience in custom plugin development, server configuration, and gameplay innovation.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-400 py-6">
+  <footer>
     Made by Oshan Paudel © 2025
   </footer>
 
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("light");
+      toggle.textContent = document.body.classList.contains("light") ? "🌙" : "☀️";
+    };
+  </script>
 </body>
 </html>
