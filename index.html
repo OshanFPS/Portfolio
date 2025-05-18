@@ -1,52 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oshan's Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oshan.dev</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-  <header>
-    <h1>NoTzeR</h1>
-    <button id="themeToggle">🌓</button>
-  </header>
+<body class="dark">
+  <nav class="navbar">
+    <h1>Oshan.dev</h1>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle">☀️</button></li>
+    </ul>
+  </nav>
 
   <main class="container">
-    <div class="text">
-      <h2>Hey, I'm Oshan</h2>
-      <p>
-        With over 4 years of hands-on experience in <strong>Minecraft server development</strong>, I’ve honed my skills in optimizing performance, configuring complex systems, and designing immersive gameplay experiences.
-      </p>
-      <p>
-        I’m also a <strong>web developer</strong> focused on building responsive, fast, and user-friendly web apps using modern technologies.
-      </p>
+    <section id="about" class="about">
+      <div class="text">
+        <h2>Hey, I'm Oshan</h2>
+        <p>With over 4 years of hands-on experience in <strong>Minecraft server development</strong>, I specialize in performance optimization, custom plugins, and immersive gameplay.</p>
+        <p>I’m also a <strong>web developer</strong> passionate about building fast, modern, and responsive websites with precision and creativity.</p>
+        <div class="buttons">
+          <a href="#contact" class="btn primary">Contact Me</a>
+          <a href="#projects" class="btn">View Projects</a>
+        </div>
+        <div class="social">
+          <a href="https://github.com/yourgithub" target="_blank">
+            <img src="Photos/github.png" alt="GitHub" /> GitHub
+          </a>
+          <a href="https://linkedin.com/in/yourlinkedin" target="_blank">
+            <img src="Photos/linkedin.png" alt="LinkedIn" /> LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="Photos/oshan.jpg" alt="Oshan photo" />
+      </div>
+    </section>
 
-      <div class="skills">
+    <section id="projects" class="projects">
+      <h2>What I Do</h2>
+      <div class="cards">
         <div class="card">
           <h3>Web Development</h3>
-          <p>Modern websites using React, Tailwind, Node.js and more.</p>
+          <p>Crafting performant, scalable, and user-friendly websites with modern technologies like React, Tailwind CSS, and Node.js.</p>
         </div>
         <div class="card">
-          <h3>Minecraft Servers</h3>
-          <p>Over 4 years working with Spigot, Paper, plugins, and custom configs.</p>
+          <h3>Minecraft Server Dev</h3>
+          <p>Building custom Minecraft experiences with Spigot, Paper, plugin configs, server optimization, and community engagement.</p>
         </div>
       </div>
-
-      <div class="buttons">
-        <a href="#" class="btn primary">Contact Me</a>
-        <a href="#" class="btn secondary">View Projects</a>
-      </div>
-
-      <div class="socials">
-        <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-
-    <div class="photo">
-      <img src="Photos/oshan.jpg" alt="Oshan's Photo">
-    </div>
+    </section>
   </main>
 
   <footer>
@@ -54,10 +61,11 @@
   </footer>
 
   <script>
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      const html = document.documentElement;
-      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
-    });
+    const toggle = document.getElementById("theme-toggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("light");
+      toggle.textContent = document.body.classList.contains("light") ? "🌙" : "☀️";
+    };
   </script>
 </body>
 </html>
