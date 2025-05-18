@@ -1,138 +1,173 @@
 :root {
-  --bg: #ffffff;
-  --text: #1c1c1c;
-  --accent: #007acc;
-  --card-bg: #f5f5f5;
-  --btn-bg: #007acc;
-  --btn-text: #fff;
-}
-
-[data-theme='dark'] {
   --bg: #0d1117;
   --text: #c9d1d9;
   --accent: #58a6ff;
-  --card-bg: #161b22;
-  --btn-bg: #58a6ff;
-  --btn-text: #000;
+  --nav: #161b22;
+  --card: #1f2937;
+  --light-bg: #ffffff;
+  --light-text: #1c1c1c;
+  --light-nav: #f0f0f0;
 }
 
 body {
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
-header {
+body.light {
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+  --nav: var(--light-nav);
+  --card: #f9f9f9;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--nav);
   padding: 1rem 2rem;
-  background-color: var(--card-bg);
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  align-items: center;
-}
-
-.text {
-  flex: 1 1 60%;
-}
-
-.photo {
-  flex: 1 1 35%;
-  text-align: center;
-}
-
-.photo img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-h2 {
-  font-size: 2.5rem;
+.navbar h1 {
   color: var(--accent);
 }
 
-p {
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a, .nav-links button {
+  color: var(--text);
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about .text {
+  flex: 1 1 55%;
+}
+
+.about .text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about .text p {
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-.skills {
+.about .photo {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.about .photo img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.social {
+  margin-top: 1rem;
   display: flex;
   gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.social img {
+  width: 20px;
+  height: 20px;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
 .card {
-  background: var(--card-bg);
-  padding: 1rem;
+  background: var(--card);
+  padding: 1.5rem;
   border-radius: 12px;
-  flex: 1;
-  min-width: 200px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.buttons {
-  margin: 2rem 0;
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  line-height: 1.5;
 }
 
 .btn {
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  margin-right: 1rem;
-  font-weight: bold;
   display: inline-block;
-}
-
-.primary {
-  background: var(--btn-bg);
-  color: var(--btn-text);
-}
-
-.secondary {
-  border: 2px solid var(--btn-bg);
-  color: var(--btn-bg);
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.5rem;
   background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.socials a {
-  margin-right: 1rem;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
+.btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #000;
 }
 
 footer {
   text-align: center;
-  padding: 2rem;
-  background: var(--card-bg);
-  margin-top: 3rem;
-  font-size: 14px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .photo {
-    margin-top: 2rem;
-  }
-
-  .skills {
-    flex-direction: column;
-  }
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text);
 }
